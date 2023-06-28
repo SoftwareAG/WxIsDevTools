@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  msr:
+    image: ${CONTAINER_IMAGE}:${CONTAINER_IMAGE_TAG}
+    ports:
+      - ${HOST_PORT_PREFIX}55:5555
+    volumes:
+      - ${HOST_MSR_LICENSE_FILE}:/tmp/license.xml
+      - ./application.properties:/tmp/application.properties
+      # Our Code
+      - ../../code/is-packages/WxIsDevTools/:${GUEST_IS_HOME}/packages/WxIsDevTools/
+      - ../../code/is-packages/WxIsDevToolsLocalTest/:${GUEST_IS_HOME}/packages/WxIsDevToolsLocalTest/
+    environment:
+      - SAG_IS_LICENSE_FILE=/tmp/license.xml
+      - SAG_IS_CONFIG_PROPERTIES=/tmp/application.properties
