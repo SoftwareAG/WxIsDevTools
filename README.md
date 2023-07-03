@@ -19,3 +19,6 @@ For convenience, when changing the current packages only, use the provided run c
 - run Software AG designer and connect to `http://localhost:${HOST_PORT_PREFIX}55` or preferably to `http://host.docker.internal:${HOST_PORT_PREFIX}55`
   - Note: after starting, try to run the test service `wx.localTest.IsDevTools:tracePipeline1` from Designer and notice the server.log and the runtime standard output.
 - when finished with the code authoring, shut down the runtime with `docker compose down`
+
+----
+These tools are provided as-is and without warranty or support. They do not constitute part of the Software AG product suite. Users are free to use, fork and modify them, subject to the license agreement. While Software AG welcomes contributions, we cannot guarantee to include every contribution in the master project.
